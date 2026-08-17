@@ -69,6 +69,11 @@ export const copy = {
         lead: "Personnage de marque premium — cartoon cinématique, déclinable en poses et expressions.",
         alt: "Mascotte démon entrepreneur 3D — modèle interactif",
       },
+      {
+        title: "Dragon gamer",
+        lead: "Petit dragon au casque gaming — mascotte cartoon prête pour le jeu et le stream.",
+        alt: "Dragon gamer 3D avec casque audio — modèle interactif",
+      },
     ],
     downloadQuietblock: "Télécharger QuietBlock",
     projects: [
@@ -261,6 +266,11 @@ export const copy = {
         title: "Entrepreneur demon",
         lead: "Premium brand character — cinematic cartoon, easy to vary in poses and expressions.",
         alt: "Entrepreneur demon mascot 3D — interactive model",
+      },
+      {
+        title: "Gamer dragon",
+        lead: "Small dragon with a gaming headset — cartoon mascot ready for games and streaming.",
+        alt: "3D gamer dragon with headset — interactive model",
       },
     ],
     downloadQuietblock: "Download QuietBlock",

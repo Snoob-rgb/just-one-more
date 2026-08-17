@@ -16,5 +16,10 @@ export const site = {
       src: "models/demon_mascotte.glb",
       poster: "models/demon_mascotte.png",
     },
+    {
+      id: "dragon",
+      src: "models/dragon_gamer.glb",
+      poster: "models/dragon_gamer.png",
+    },
   ],
 } as const
