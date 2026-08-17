@@ -15,7 +15,7 @@ const ModelViewer = lazy(() =>
 )
 
 const EXT_REL = "noopener noreferrer"
-const MASCOT = "models/demon_mascotte.png"
+const MASCOT = site.mascotImage
 
 export default function App() {
   const [lang, setLang] = useState<Lang>(() => readLangPreference())
@@ -249,31 +249,50 @@ export default function App() {
               <p className="section-lead">{t.workLead}</p>
             </div>
 
-            <div className="bento">
-              <div className="bento-3d card card-glow">
+            <div className="model3d-section">
+              <div className="section-head model3d-head">
                 <p className="section-label">{t.model3dLabel}</p>
-                <h3 className="bento-3d-title">{t.model3dTitle}</h3>
-                <p className="bento-3d-lead">{t.model3dLead}</p>
-                <Suspense
-                  fallback={
-                    <figure className="model-viewer-frame model-viewer-loading">
-                      <img
-                        src={assetUrl(site.model3d.poster)}
-                        alt={t.model3dAlt}
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </figure>
-                  }
-                >
-                  <ModelViewer
-                    src={site.model3d.src}
-                    poster={site.model3d.poster}
-                    alt={t.model3dAlt}
-                    hint={t.model3dHint}
-                  />
-                </Suspense>
+                <h3 className="model3d-section-title">{t.model3dTitle}</h3>
+                <p className="section-lead">{t.model3dLead}</p>
               </div>
+
+              <div className="model3d-vitrine">
+              {site.models3d.map((model, i) => {
+                const copy3d = t.model3dItems[i]
+                if (!copy3d) return null
+                return (
+                  <article
+                    className={`bento-3d card card-glow${i === 0 ? " is-featured" : ""}`}
+                    key={model.id}
+                  >
+                    <p className="section-label">
+                      {i === 0 ? t.model3dLabel : t.showcase3dLabel}
+                    </p>
+                    <h3 className="bento-3d-title">{copy3d.title}</h3>
+                    <p className="bento-3d-lead">{copy3d.lead}</p>
+                    <Suspense
+                      fallback={
+                        <figure className="model-viewer-frame model-viewer-loading">
+                          <img
+                            src={assetUrl(model.poster)}
+                            alt={copy3d.alt}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </figure>
+                      }
+                    >
+                      <ModelViewer
+                        src={model.src}
+                        poster={model.poster}
+                        alt={copy3d.alt}
+                        hint={t.model3dHint}
+                      />
+                    </Suspense>
+                  </article>
+                )
+              })}
+            </div>
             </div>
 
             <div className="card-grid card-grid-projects">

@@ -53,11 +53,23 @@ export const copy = {
     featuredLabel: "Projet phare",
     followBuild: "Suivre le build",
     model3dLabel: "Modélisation 3D",
+    showcase3dLabel: "Vitrine",
     model3dTitle: "Personnages & assets en 3D",
     model3dLead:
       "Génération et texturage IA, puis livraison en GLB / FBX / OBJ — prêt pour le web, les jeux ou l’impression.",
     model3dHint: "Glisse ou pince pour tourner le modèle",
-    model3dAlt: "Mascotte démon entrepreneur 3D — modèle interactif",
+    model3dItems: [
+      {
+        title: "Mascotte studio",
+        lead: "Panda roux — identité visuelle Just One More, prête pour le web et les réseaux.",
+        alt: "Mascotte panda roux 3D — modèle interactif",
+      },
+      {
+        title: "Démon entrepreneur",
+        lead: "Personnage de marque premium — cartoon cinématique, déclinable en poses et expressions.",
+        alt: "Mascotte démon entrepreneur 3D — modèle interactif",
+      },
+    ],
     downloadQuietblock: "Télécharger QuietBlock",
     projects: [
       {
@@ -234,11 +246,23 @@ export const copy = {
     featuredLabel: "Featured",
     followBuild: "Follow the build",
     model3dLabel: "3D modeling",
+    showcase3dLabel: "Showcase",
     model3dTitle: "Characters & 3D assets",
     model3dLead:
       "AI mesh generation and texturing, delivered as GLB / FBX / OBJ — ready for web, games, or print.",
     model3dHint: "Drag or pinch to rotate the model",
-    model3dAlt: "Entrepreneur demon mascot 3D — interactive model",
+    model3dItems: [
+      {
+        title: "Studio mascot",
+        lead: "Red panda — Just One More visual identity, ready for web and social.",
+        alt: "Red panda mascot 3D — interactive model",
+      },
+      {
+        title: "Entrepreneur demon",
+        lead: "Premium brand character — cinematic cartoon, easy to vary in poses and expressions.",
+        alt: "Entrepreneur demon mascot 3D — interactive model",
+      },
+    ],
     downloadQuietblock: "Download QuietBlock",
     projects: [
       {
