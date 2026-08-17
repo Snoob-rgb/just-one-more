@@ -630,6 +630,90 @@ button {
   max-width: 20ch;
 }
 
+.characters-roster {
+  display: grid;
+  gap: 1rem;
+}
+
+.character-card {
+  padding: clamp(1.1rem, 2.5vw, 1.45rem);
+}
+
+.character-card.is-featured {
+  border-color: var(--line-strong);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 115, 71, 0.1), transparent 55%),
+    var(--bg-card);
+}
+
+.character-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.55rem 0.75rem;
+  margin-bottom: 0.55rem;
+}
+
+.character-role {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 115, 71, 0.28);
+  background: rgba(255, 115, 71, 0.08);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.character-card-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 3vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.character-card-lead {
+  margin: 0 0 1rem;
+  color: var(--ink-muted);
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 640px) {
+  .characters-roster {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .characters-roster {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .character-card.is-featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: 1rem 1.25rem;
+    align-items: start;
+  }
+
+  .character-card.is-featured .character-card-head,
+  .character-card.is-featured .character-card-lead {
+    grid-column: 1;
+  }
+
+  .character-card.is-featured .model-viewer-frame {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    min-height: 320px;
+  }
+}
+
 .model3d-vitrine {
   display: grid;
   gap: 1rem;

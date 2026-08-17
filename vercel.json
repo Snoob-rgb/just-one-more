@@ -25,11 +25,19 @@
         },
         {
           "key": "Permissions-Policy",
-          "value": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), interest-cohort=()"
+          "value": "accelerometer=(), autoplay=(), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), hid=(), idle-detection=(), interest-cohort=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), usb=(), xr-spatial-tracking=()"
         },
         {
           "key": "Cross-Origin-Opener-Policy",
           "value": "same-origin"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Origin-Agent-Cluster",
+          "value": "?1"
         },
         {
           "key": "X-DNS-Prefetch-Control",
@@ -92,11 +100,37 @@
           "value": "nosniff"
         }
       ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/downloads/(.*)",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "attachment"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
     }
   ],
   "rewrites": [
     {
-      "source": "/((?!api/|assets/|brand/|projects/|models/|draco/|draco-config\\.js|downloads/|fonts/|robots.txt|sitemap.xml|favicon.svg|icons.svg).*)",
+      "source": "/((?!api/|assets/|brand/|projects/|models/|draco/|draco-config\\.js|downloads/|fonts/|\\.well-known/|robots.txt|sitemap.xml|favicon.svg|icons.svg).*)",
       "destination": "/index.html"
     }
   ]

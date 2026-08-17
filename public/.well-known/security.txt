@@ -1,0 +1,5 @@
+Contact: https://justonemorestudio.vercel.app/#contact
+Contact: https://www.instagram.com/justonemore.exe/
+Expires: 2027-08-18T00:00:00.000Z
+Preferred-Languages: fr, en
+Canonical: https://justonemorestudio.vercel.app/.well-known/security.txt

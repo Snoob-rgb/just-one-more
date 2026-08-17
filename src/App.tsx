@@ -83,6 +83,9 @@ export default function App() {
               <a href="#work" onClick={closeMenu}>
                 {t.navWork}
               </a>
+              <a href="#characters" onClick={closeMenu}>
+                {t.navCharacters}
+              </a>
               <a href="#lab" onClick={closeMenu}>
                 {t.navLab}
               </a>
@@ -142,6 +145,9 @@ export default function App() {
             </a>
             <a href="#work" onClick={closeMenu}>
               {t.navWork}
+            </a>
+            <a href="#characters" onClick={closeMenu}>
+              {t.navCharacters}
             </a>
             <a href="#lab" onClick={closeMenu}>
               {t.navLab}
@@ -249,52 +255,6 @@ export default function App() {
               <p className="section-lead">{t.workLead}</p>
             </div>
 
-            <div className="model3d-section">
-              <div className="section-head model3d-head">
-                <p className="section-label">{t.model3dLabel}</p>
-                <h3 className="model3d-section-title">{t.model3dTitle}</h3>
-                <p className="section-lead">{t.model3dLead}</p>
-              </div>
-
-              <div className="model3d-vitrine">
-              {site.models3d.map((model, i) => {
-                const copy3d = t.model3dItems[i]
-                if (!copy3d) return null
-                return (
-                  <article
-                    className={`bento-3d card card-glow${i === 0 ? " is-featured" : ""}`}
-                    key={model.id}
-                  >
-                    <p className="section-label">
-                      {i === 0 ? t.model3dLabel : t.showcase3dLabel}
-                    </p>
-                    <h3 className="bento-3d-title">{copy3d.title}</h3>
-                    <p className="bento-3d-lead">{copy3d.lead}</p>
-                    <Suspense
-                      fallback={
-                        <figure className="model-viewer-frame model-viewer-loading">
-                          <img
-                            src={assetUrl(model.poster)}
-                            alt={copy3d.alt}
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        </figure>
-                      }
-                    >
-                      <ModelViewer
-                        src={model.src}
-                        poster={model.poster}
-                        alt={copy3d.alt}
-                        hint={t.model3dHint}
-                      />
-                    </Suspense>
-                  </article>
-                )
-              })}
-            </div>
-            </div>
-
             <div className="card-grid card-grid-projects">
               {t.projects.map((project) => (
                 <article
@@ -333,6 +293,58 @@ export default function App() {
                   )}
                 </article>
               ))}
+            </div>
+          </section>
+
+          <section
+            className="section section-alt"
+            id="characters"
+            aria-labelledby="characters-title"
+            data-reveal
+          >
+            <div className="section-head">
+              <p className="section-label">{t.charactersLabel}</p>
+              <h2 id="characters-title">{t.charactersTitle}</h2>
+              <p className="section-lead">{t.charactersLead}</p>
+            </div>
+
+            <div className="characters-roster">
+              {site.models3d.map((model, i) => {
+                const copy3d = t.model3dItems[i]
+                if (!copy3d) return null
+                const featured = "featured" in model && model.featured
+                return (
+                  <article
+                    className={`character-card card card-glow${featured ? " is-featured" : ""}`}
+                    key={model.id}
+                  >
+                    <div className="character-card-head">
+                      <span className="character-role">{copy3d.role}</span>
+                      <h3 className="character-card-title">{copy3d.title}</h3>
+                    </div>
+                    <p className="character-card-lead">{copy3d.lead}</p>
+                    <Suspense
+                      fallback={
+                        <figure className="model-viewer-frame model-viewer-loading">
+                          <img
+                            src={assetUrl(model.poster)}
+                            alt={copy3d.alt}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </figure>
+                      }
+                    >
+                      <ModelViewer
+                        src={model.src}
+                        poster={model.poster}
+                        alt={copy3d.alt}
+                        hint={t.model3dHint}
+                      />
+                    </Suspense>
+                  </article>
+                )
+              })}
             </div>
           </section>
 
