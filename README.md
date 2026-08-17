@@ -4,9 +4,16 @@ Site vitrine du studio **Just One More** — logiciels, jeux, contenu.
 
 ## En ligne 24/7
 
-Déployé via **GitHub Pages** à chaque push sur `main` :
+**URL principale (Vercel) :** https://justonemorestudio.vercel.app
 
-https://snoob-rgb.github.io/just-one-more/
+Aussi : https://justonemore-gamma.vercel.app  
+Instagram : https://www.instagram.com/justonemore.exe/
+
+Republier :
+
+```bash
+npx vercel --prod --yes
+```
 
 ## Dev
 
@@ -15,7 +22,7 @@ npm install
 npm run dev
 ```
 
-Ouvre `http://localhost:5173/just-one-more/` (base path GitHub Pages).
+Ouvre `http://localhost:5173/`.
 
 ## Build
 
@@ -28,4 +35,9 @@ npm run preview
 
 - Vite + React + TypeScript
 - Identité : noir / ivoire / or soft (`public/brand/`)
-- Hébergement : GitHub Pages (Actions)
+- Hébergement : Vercel
+
+## Sécurité
+
+Rapport : [`docs/SECURITY_REPORT.md`](docs/SECURITY_REPORT.md)  
+Headers CSP/HSTS/XFO configurés dans `vercel.json`.
