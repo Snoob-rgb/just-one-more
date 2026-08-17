@@ -1,4 +1,5 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
+import { CharacterSelect } from "./CharacterSelect"
 import { ContactForm } from "./ContactForm"
 import { copy, type Lang } from "./i18n"
 import {
@@ -9,10 +10,6 @@ import {
 } from "./security"
 import { site } from "./site.config"
 import { useReveal } from "./useReveal"
-
-const ModelViewer = lazy(() =>
-  import("./ModelViewer").then((m) => ({ default: m.ModelViewer })),
-)
 
 const EXT_REL = "noopener noreferrer"
 const MASCOT = site.mascotImage
@@ -308,44 +305,14 @@ export default function App() {
               <p className="section-lead">{t.charactersLead}</p>
             </div>
 
-            <div className="characters-roster">
-              {site.models3d.map((model, i) => {
-                const copy3d = t.model3dItems[i]
-                if (!copy3d) return null
-                const featured = "featured" in model && model.featured
-                return (
-                  <article
-                    className={`character-card card card-glow${featured ? " is-featured" : ""}`}
-                    key={model.id}
-                  >
-                    <div className="character-card-head">
-                      <span className="character-role">{copy3d.role}</span>
-                      <h3 className="character-card-title">{copy3d.title}</h3>
-                    </div>
-                    <p className="character-card-lead">{copy3d.lead}</p>
-                    <Suspense
-                      fallback={
-                        <figure className="model-viewer-frame model-viewer-loading">
-                          <img
-                            src={assetUrl(model.poster)}
-                            alt={copy3d.alt}
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        </figure>
-                      }
-                    >
-                      <ModelViewer
-                        src={model.src}
-                        poster={model.poster}
-                        alt={copy3d.alt}
-                        hint={t.model3dHint}
-                      />
-                    </Suspense>
-                  </article>
-                )
-              })}
-            </div>
+            <CharacterSelect
+              models={site.models3d}
+              items={t.model3dItems}
+              statLabels={t.statLabels}
+              hint={t.model3dHint}
+              selectHint={t.charactersSelectHint}
+              gridLabel={t.charactersGridLabel}
+            />
           </section>
 
           <section className="section" id="lab" aria-labelledby="lab-title" data-reveal>

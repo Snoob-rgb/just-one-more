@@ -54,9 +54,12 @@ export const copy = {
     featuredLabel: "Projet phare",
     followBuild: "Suivre le build",
     charactersLabel: "Personnages 3D",
-    charactersTitle: "L’équipe Just One More",
+    charactersTitle: "Choisis ton perso",
     charactersLead:
-      "Dix personnages cartoon premium — générés et texturés en 3D, prêts pour le web, les jeux et les réseaux. Fais-les tourner.",
+      "Dix personnages 3D créés par le studio. Sélectionne un portrait, fais tourner le modèle — et dis-nous lequel te ressemble.",
+    charactersSelectHint: "Clique un portrait ou navigue avec ← →",
+    charactersGridLabel: "Choisir un personnage",
+    statLabels: ["Créativité", "Énergie", "Café"],
     model3dHint: "Glisse ou pince pour tourner le modèle",
     model3dItems: [
       {
@@ -297,9 +300,12 @@ export const copy = {
     featuredLabel: "Featured",
     followBuild: "Follow the build",
     charactersLabel: "3D characters",
-    charactersTitle: "The Just One More roster",
+    charactersTitle: "Choose your character",
     charactersLead:
-      "Ten premium cartoon characters — AI-generated and textured in 3D, ready for web, games, and social. Spin them around.",
+      "Ten 3D characters built by the studio. Pick a portrait, spin the model — and tell us which one is you.",
+    charactersSelectHint: "Click a portrait or use ← → to switch",
+    charactersGridLabel: "Pick a character",
+    statLabels: ["Creativity", "Energy", "Coffee"],
     model3dHint: "Drag or pinch to rotate the model",
     model3dItems: [
       {
