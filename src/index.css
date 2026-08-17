@@ -155,6 +155,7 @@ button {
   top: 8%;
   right: 8%;
   background: rgba(255, 115, 71, 0.28);
+  animation: glowDrift 18s ease-in-out infinite alternate;
 }
 
 .glow-b {
@@ -163,6 +164,7 @@ button {
   bottom: 12%;
   left: 4%;
   background: rgba(255, 179, 71, 0.18);
+  animation: glowDrift 24s ease-in-out infinite alternate-reverse;
 }
 
 .shell {
@@ -414,6 +416,7 @@ button {
   box-shadow:
     0 0 0 12px rgba(255, 115, 71, 0.06),
     0 30px 80px rgba(255, 115, 71, 0.18);
+  animation: ringBreath 6s ease-in-out infinite;
 }
 
 .hero-mascot {
@@ -699,7 +702,23 @@ button {
   height: 100%;
   border-radius: inherit;
   background: linear-gradient(90deg, var(--accent), #ffb347);
-  transition: width 0.5s ease;
+  animation: statGrow 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.char-stat:nth-child(2) .char-stat-fill {
+  animation-delay: 0.1s;
+}
+
+.char-stat:nth-child(3) .char-stat-fill {
+  animation-delay: 0.2s;
+}
+
+.char-select-info {
+  animation: charInfoEnter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.char-select-viewer {
+  animation: charStageEnter 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .char-select-hint {
@@ -761,6 +780,7 @@ button {
   box-shadow:
     0 0 0 1px var(--accent),
     0 10px 26px rgba(255, 115, 71, 0.22);
+  animation: thumbPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .char-thumb.is-selected span {
@@ -1175,6 +1195,69 @@ button {
   }
 }
 
+@keyframes statGrow {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes charInfoEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes charStageEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.955);
+    filter: saturate(0.5) brightness(1.35);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes thumbPop {
+  0% {
+    transform: scale(0.9);
+  }
+  60% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ringBreath {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.82;
+  }
+}
+
+@keyframes glowDrift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-46px, 34px, 0) scale(1.18);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1183,8 +1266,15 @@ button {
   .hero-copy,
   .hero-visual,
   .hero-mascot,
+  .hero-ring,
+  .glow-a,
+  .glow-b,
   .live-dot,
   .btn,
+  .char-select-info,
+  .char-select-viewer,
+  .char-stat-fill,
+  .char-thumb,
   [data-reveal] {
     animation: none !important;
     transition: none !important;

@@ -54,7 +54,7 @@ export function CharacterSelect({
   return (
     <div className="char-select">
       <article className="char-select-stage card card-glow" aria-live="polite">
-        <div className="char-select-info">
+        <div className="char-select-info" key={`info-${model.id}`}>
           <span className="character-role">{item.role}</span>
           <h3 className="char-select-name">{item.title}</h3>
           <p className="char-select-lead">{item.lead}</p>
@@ -76,25 +76,27 @@ export function CharacterSelect({
           </ul>
           <p className="char-select-hint">{selectHint}</p>
         </div>
-        <Suspense
-          fallback={
-            <figure className="model-viewer-frame model-viewer-loading">
-              <img
-                src={assetUrl(model.poster)}
-                alt={item.alt}
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-          }
-        >
-          <ModelViewer
-            src={model.src}
-            poster={model.poster}
-            alt={item.alt}
-            hint={hint}
-          />
-        </Suspense>
+        <div className="char-select-viewer" key={`stage-${model.id}`}>
+          <Suspense
+            fallback={
+              <figure className="model-viewer-frame model-viewer-loading">
+                <img
+                  src={assetUrl(model.poster)}
+                  alt={item.alt}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            }
+          >
+            <ModelViewer
+              src={model.src}
+              poster={model.poster}
+              alt={item.alt}
+              hint={hint}
+            />
+          </Suspense>
+        </div>
       </article>
 
       <div
