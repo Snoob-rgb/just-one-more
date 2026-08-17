@@ -96,7 +96,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!api/|assets/|brand/|projects/|models/|draco/|downloads/|fonts/|robots.txt|sitemap.xml|favicon.svg|icons.svg).*)",
+      "source": "/((?!api/|assets/|brand/|projects/|models/|draco/|draco-config\\.js|downloads/|fonts/|robots.txt|sitemap.xml|favicon.svg|icons.svg).*)",
       "destination": "/index.html"
     }
   ]

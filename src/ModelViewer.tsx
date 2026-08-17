@@ -3,6 +3,8 @@ import "@google/model-viewer"
 import { createElement, useEffect, useRef, useState } from "react"
 import { assetUrl } from "./security"
 
+ModelViewerElement.dracoDecoderLocation = "/draco/"
+
 type Props = {
   src: string
   poster?: string
