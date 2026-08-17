@@ -1,6 +1,9 @@
+import { ModelViewerElement } from "@google/model-viewer"
 import "@google/model-viewer"
-import { createElement } from "react"
+import { createElement, useEffect, useRef, useState } from "react"
 import { assetUrl } from "./security"
+
+ModelViewerElement.dracoDecoderLocation = assetUrl("draco/")
 
 type Props = {
   src: string
@@ -10,9 +13,22 @@ type Props = {
 }
 
 export function ModelViewer({ src, poster, alt, hint }: Props) {
+  const ref = useRef<HTMLElement>(null)
+  const [failed, setFailed] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    const onError = () => setFailed(true)
+    el.addEventListener("error", onError)
+    return () => el.removeEventListener("error", onError)
+  }, [])
+
   return (
     <figure className="model-viewer-frame">
       {createElement("model-viewer", {
+        ref,
         src: assetUrl(src),
         poster: poster ? assetUrl(poster) : undefined,
         alt,
@@ -23,9 +39,10 @@ export function ModelViewer({ src, poster, alt, hint }: Props) {
         exposure: "1.05",
         "interaction-prompt": "auto",
         "touch-action": "pan-y",
-        "environment-image": "neutral",
       })}
-      <figcaption className="model-viewer-hint">{hint}</figcaption>
+      <figcaption className="model-viewer-hint">
+        {failed ? "Chargement 3D impossible — réessaie dans un instant" : hint}
+      </figcaption>
     </figure>
   )
 }
