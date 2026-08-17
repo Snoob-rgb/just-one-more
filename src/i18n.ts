@@ -74,6 +74,11 @@ export const copy = {
         lead: "Petit dragon au casque gaming — mascotte cartoon prête pour le jeu et le stream.",
         alt: "Dragon gamer 3D avec casque audio — modèle interactif",
       },
+      {
+        title: "Gardien des pics azur",
+        lead: "Personnage fantasy premium — gardien montagne, textures PBR, prêt pour le web.",
+        alt: "Gardien Azure Peak 3D — modèle interactif",
+      },
     ],
     downloadQuietblock: "Télécharger QuietBlock",
     projects: [
@@ -271,6 +276,11 @@ export const copy = {
         title: "Gamer dragon",
         lead: "Small dragon with a gaming headset — cartoon mascot ready for games and streaming.",
         alt: "3D gamer dragon with headset — interactive model",
+      },
+      {
+        title: "Azure Peak Guardian",
+        lead: "Premium fantasy character — mountain guardian, PBR textures, web-ready.",
+        alt: "Azure Peak Guardian 3D — interactive model",
       },
     ],
     downloadQuietblock: "Download QuietBlock",

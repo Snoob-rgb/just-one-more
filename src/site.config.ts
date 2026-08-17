@@ -21,5 +21,10 @@ export const site = {
       src: "models/dragon_gamer.glb",
       poster: "models/dragon_gamer.png",
     },
+    {
+      id: "azure",
+      src: "models/azure_guardian.glb",
+      poster: "models/azure_guardian.png",
+    },
   ],
 } as const
