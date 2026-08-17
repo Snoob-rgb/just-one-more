@@ -6,7 +6,7 @@ export const site = {
   /** Mets un lien itch/Drive/GitHub Releases quand le build est public */
   quietblockDownload: "downloads/QuietBlock-1.0.0.zip",
   model3d: {
-    src: "models/mascotte.glb",
-    poster: "models/mascotte.png",
+    src: "models/demon_mascotte.glb",
+    poster: "models/demon_mascotte.png",
   },
 } as const

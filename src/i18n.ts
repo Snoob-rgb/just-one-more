@@ -57,7 +57,7 @@ export const copy = {
     model3dLead:
       "Génération et texturage IA, puis livraison en GLB / FBX / OBJ — prêt pour le web, les jeux ou l’impression.",
     model3dHint: "Glisse ou pince pour tourner le modèle",
-    model3dAlt: "Mascotte panda roux 3D — modèle interactif",
+    model3dAlt: "Mascotte démon entrepreneur 3D — modèle interactif",
     downloadQuietblock: "Télécharger QuietBlock",
     projects: [
       {
@@ -238,7 +238,7 @@ export const copy = {
     model3dLead:
       "AI mesh generation and texturing, delivered as GLB / FBX / OBJ — ready for web, games, or print.",
     model3dHint: "Drag or pinch to rotate the model",
-    model3dAlt: "Red panda mascot 3D — interactive model",
+    model3dAlt: "Entrepreneur demon mascot 3D — interactive model",
     downloadQuietblock: "Download QuietBlock",
     projects: [
       {

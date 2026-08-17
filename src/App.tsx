@@ -15,7 +15,7 @@ const ModelViewer = lazy(() =>
 )
 
 const EXT_REL = "noopener noreferrer"
-const MASCOT = "brand/mascotte.png"
+const MASCOT = "models/demon_mascotte.png"
 
 export default function App() {
   const [lang, setLang] = useState<Lang>(() => readLangPreference())
