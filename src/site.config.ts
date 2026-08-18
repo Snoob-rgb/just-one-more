@@ -66,5 +66,11 @@ export const site = {
       poster: "models/chat_barista.png",
       stats: [82, 75, 100],
     },
+    {
+      id: "crimson_nocturne",
+      src: "models/crimson_nocturne.glb",
+      poster: "models/crimson_nocturne.png",
+      stats: [92, 95, 12],
+    },
   ],
 } as const

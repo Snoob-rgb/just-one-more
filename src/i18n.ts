@@ -56,7 +56,7 @@ export const copy = {
     charactersLabel: "Personnages 3D",
     charactersTitle: "Choisis ton perso",
     charactersLead:
-      "Dix personnages 3D créés par le studio. Sélectionne un portrait, fais tourner le modèle — et dis-nous lequel te ressemble.",
+      "Onze personnages 3D créés par le studio. Sélectionne un portrait, fais tourner le modèle — et dis-nous lequel te ressemble.",
     charactersSelectHint: "Clique un portrait ou navigue avec ← →",
     charactersGridLabel: "Choisir un personnage",
     statLabels: ["Créativité", "Énergie", "Café"],
@@ -121,6 +121,12 @@ export const copy = {
         title: "Chat barista",
         lead: "Chat tabby orange en tablier — clin d’œil, latte à la patte, ambiance studio cozy.",
         alt: "Chat barista 3D — modèle interactif",
+      },
+      {
+        role: "Nocturne",
+        title: "Crimson Nocturne",
+        lead: "Personnage premium sombre — esthétique crimson nocturne, mystère et énergie de fin de nuit.",
+        alt: "Crimson Nocturne 3D — modèle interactif",
       },
     ],
     downloadQuietblock: "Télécharger QuietBlock",
@@ -302,7 +308,7 @@ export const copy = {
     charactersLabel: "3D characters",
     charactersTitle: "Choose your character",
     charactersLead:
-      "Ten 3D characters built by the studio. Pick a portrait, spin the model — and tell us which one is you.",
+      "Eleven 3D characters built by the studio. Pick a portrait, spin the model — and tell us which one is you.",
     charactersSelectHint: "Click a portrait or use ← → to switch",
     charactersGridLabel: "Pick a character",
     statLabels: ["Creativity", "Energy", "Coffee"],
@@ -367,6 +373,12 @@ export const copy = {
         title: "Cat barista",
         lead: "Orange tabby in an apron — wink, latte in paw, cozy studio energy.",
         alt: "Cat barista 3D — interactive model",
+      },
+      {
+        role: "Nocturne",
+        title: "Crimson Nocturne",
+        lead: "Dark premium character — crimson nocturne aesthetic, mystery and late-night energy.",
+        alt: "Crimson Nocturne 3D — interactive model",
       },
     ],
     downloadQuietblock: "Download QuietBlock",
