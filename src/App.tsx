@@ -302,7 +302,9 @@ export default function App() {
             <div className="section-head">
               <p className="section-label">{t.charactersLabel}</p>
               <h2 id="characters-title">{t.charactersTitle}</h2>
-              <p className="section-lead">{t.charactersLead}</p>
+              <p className="section-lead">
+                {t.charactersLead.replace("{count}", String(site.models3d.length))}
+              </p>
             </div>
 
             <CharacterSelect
